@@ -79,7 +79,7 @@
 </head>
 
 <!-- Body: page background + safe defaults -->
-<body class="bg-page" style="margin:0; padding:0; background-color:#ffffff; font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif;">
+<body class="bg-page" style="margin:0; padding:0; background-color:#f3eef8; font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif;">
 
   <!-- Hidden preheader: shows in inbox preview after the subject line. Keep ~85-100 chars. -->
   <div style="display:none; font-size:1px; color:#f4f1f7; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden; mso-hide:all;">
@@ -87,18 +87,24 @@
   </div>
 
   <!-- ============ OUTER WRAPPER ============ -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="bg-page" style="background-color:#ffffff;" dir="rtl">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="bg-page" style="background-color:#f3eef8;" dir="rtl">
     <tr>
       <td align="center" style="padding:24px 12px;">
 
         <!-- ============ MAIN CONTAINER (600px) ============ -->
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="container bg-card" style="width:600px; max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="container bg-card" style="width:600px; max-width:600px; background-color:#ffffff; border-radius:18px; overflow:hidden; box-shadow:0 12px 36px rgba(112,46,164,0.12), 0 2px 8px rgba(112,46,164,0.06); border:1px solid #ece4f1;">
 
-          <!-- ===== HEADER: logo (right in RTL) ===== -->
+          <!-- ===== Decorative purple accent bar at the very top (brand identity strip) ===== -->
           <tr>
-            <td class="px-mobile" style="padding:28px 36px 8px 36px;" align="left">
-              <!-- In RTL, align="left" puts content on the visual right (browser flips). The image of the design shows logo top-right, so we use align="left" inside RTL = visual right. -->
-              <img src="logo1.png" width="150" height="40" alt="أكاديميات" style="display:block; width:150px; height:auto; max-width:150px; border:0;">
+            <td style="padding:0; line-height:0; font-size:0; background-color:#702EA4; height:5px; mso-line-height-rule:exactly;" height="5">
+              &nbsp;
+            </td>
+          </tr>
+
+          <!-- ===== HEADER: logo (right side in RTL) ===== -->
+          <tr>
+            <td class="px-mobile" style="padding:28px 36px 8px 36px; text-align:right;" align="right">
+              <img src="logo1.png" width="150" height="40" alt="أكاديميات" style="display:inline-block; width:150px; height:auto; max-width:150px; border:0;">
             </td>
           </tr>
 
@@ -118,7 +124,7 @@
           <tr>
             <td class="px-mobile" style="padding:28px 36px 8px 36px;">
 
-              <!-- Two-column row: text (right) + mockup (left) -->
+              <!-- Two-column row: text (right in RTL) + mockup (left, valign=bottom) -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
                   <!-- RIGHT column (text) — in RTL the first <td> is on the right -->
@@ -128,11 +134,10 @@
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                       <tr>
                         <td valign="top" width="20" style="width:20px; padding:8px 0 0 8px;">
-                          <!-- Pulsing dot. Falls back to static circle in Outlook (no animation) -->
                           <div class="pulse-dot" style="width:12px; height:12px; background-color:#702EA4; border-radius:50%; line-height:12px; font-size:0;">&nbsp;</div>
                         </td>
                         <td valign="top" align="right" class="body-mobile text-primary" style="font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:15px; line-height:1.85; color:#3a3a3a;">
-                          أطلقت «أكاديميات» مؤخرًا تطبيقها الجديد المخصص لأصحاب الأكاديميات، لتجربة أكثر سهولة ووضوحاً.
+                          أطلقت <strong style="color:#000000; font-weight:700;">أكاديميات</strong> مؤخرًا تطبيقها الجديد المخصص لأصحاب الأكاديميات، لتجربة أكثر سهولة ووضوحاً.
                         </td>
                       </tr>
                     </table>
@@ -141,7 +146,7 @@
                       من خلال التطبيق، يمكنك:
                     </p>
 
-                    <!-- Feature list (table rows simulate <ul> reliably across clients) -->
+                    <!-- Feature list -->
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="body-mobile" style="font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:15px; line-height:1.75; color:#3a3a3a;">
                       <tr>
                         <td valign="top" width="14" style="width:14px; color:#702EA4; padding-top:2px;" align="right">•</td>
@@ -157,23 +162,24 @@
                       </tr>
                     </table>
 
-                    <p class="body-mobile text-primary" style="margin:18px 0 0 0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:15px; line-height:1.85; color:#3a3a3a;">
+                    <p class="body-mobile text-primary" style="margin:18px 0 0 0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:15px; line-height:1.85; color:#1a1a1a; font-weight:700;">
                       حمّل التطبيق وابدأ إدارة أكاديميتك بسهولة أكبر.
                     </p>
 
                   </td>
 
-                  <!-- LEFT column (mockup) -->
-                  <td class="stack stack-img" valign="top" width="200" align="center" style="width:200px;">
+                  <!-- LEFT column (mockup) — valign=bottom so the mockup sits at the END of the paragraph -->
+                  <td class="stack stack-img" valign="bottom" width="200" align="center" style="width:200px;">
                     <img src="app_mockup.png" width="200" height="204" alt="لقطة من تطبيق أكاديميات: لوحة مراقبة المبيعات وتقارير الأداء" class="mockup-mobile" style="display:block; width:200px; height:auto; max-width:200px; border:0;">
                   </td>
                 </tr>
               </table>
 
               <!-- ===== APP STORE CTA — bulletproof button (HTML/CSS, no image) ===== -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:22px;">
+              <!-- RTL: button right-aligned, but on mobile it stretches full-width via .btn-mobile -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px;">
                 <tr>
-                  <td align="center" class="btn-mobile btn-cta">
+                  <td align="right" class="btn-mobile btn-cta">
 
                     <!--[if mso]>
                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
@@ -185,7 +191,7 @@
 
                     <!--[if !mso]><!-- -->
                     <a href="https://apps.apple.com/us/app/acadimiat-manager/id6755721500" target="_blank" rel="noopener"
-                       style="display:inline-block; background-color:#000000; color:#ffffff; text-decoration:none; border-radius:10px; padding:10px 18px; font-family:Arial,Helvetica,sans-serif; mso-padding-alt:0;">
+                       style="display:inline-block; background-color:#000000; color:#ffffff; text-decoration:none; border-radius:12px; padding:12px 22px; font-family:Arial,Helvetica,sans-serif; mso-padding-alt:0;">
                       <!-- dir="ltr" forces Apple-icon-LEFT, text on right (standard App Store badge layout) -->
                       <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" dir="ltr">
                         <tr>
@@ -213,11 +219,17 @@
           <tr>
             <td class="px-mobile bg-soft" style="padding:32px 36px; background-color:#f4f1f7;">
 
-              <!-- "التحسينات" pill badge -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left">
+              <!-- "التحسينات" pill badge — wrapped in full-width row, right-aligned (RTL) -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
-                  <td class="badge-pill" style="background-color:#e9e1ef; border-radius:14px; padding:6px 16px; font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:13px; color:#4a3a5c; font-weight:600;">
-                    التحسينات
+                  <td align="right" style="text-align:right;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
+                      <tr>
+                        <td class="badge-pill" style="background-color:#e9e1ef; border-radius:14px; padding:6px 16px; font-family:'Segoe UI',Tahoma,Arial,sans-serif; font-size:13px; color:#4a3a5c; font-weight:600;">
+                          التحسينات
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
