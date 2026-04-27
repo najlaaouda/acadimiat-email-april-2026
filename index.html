@@ -67,7 +67,7 @@
       .center-mobile   { text-align: center !important; }
     }
 
-    /* Light-mode only: explicitly opt-out of automatic dark-mode inversion in Outlook.com / Gmail */
+    /* Light-mode only for layout: explicitly opt-out of automatic dark-mode inversion in Outlook.com / Gmail */
     u + .body .gmail-fix-dark { background-color: inherit !important; color: inherit !important; }
     [data-ogsc] .text-primary  { color: #3a3a3a !important; }
     [data-ogsc] .text-muted    { color: #6b6478 !important; }
@@ -75,6 +75,22 @@
     [data-ogsb] .bg-card       { background-color: #ffffff !important; }
     [data-ogsb] .bg-page       { background-color: #f4f1f7 !important; }
     [data-ogsb] .bg-soft       { background-color: #f4f1f7 !important; }
+
+    /* --------- Image swap for dark mode ---------
+       Even though the email layout is locked to light, the IMAGE
+       can still adapt: show -light by default, swap to -dark when
+       the OS is in dark mode. Works in Apple Mail, iOS Mail, and
+       supported clients. Falls back to the light image elsewhere. */
+    .mockup-dark { display: none !important; mso-hide: all; }
+    @media (prefers-color-scheme: dark) {
+      .mockup-light { display: none !important; mso-hide: all; }
+      .mockup-dark  { display: block !important; }
+      /* tighten the surrounding TD bg in dark mode so it blends with the image */
+      .mockup-cell  { background-color: #1e1a22 !important; }
+    }
+    [data-ogsc] .mockup-light { display: none !important; }
+    [data-ogsc] .mockup-dark  { display: block !important; }
+    [data-ogsb] .mockup-cell  { background-color: #1e1a22 !important; }
   </style>
 </head>
 
@@ -169,8 +185,12 @@
                   </td>
 
                   <!-- LEFT column (mockup) — valign=bottom so the mockup sits at the END of the paragraph -->
-                  <td class="stack stack-img" valign="bottom" width="200" align="center" style="width:200px;">
-                    <img src="app_mockup.jpg" width="200" height="204" alt="لقطة من تطبيق أكاديميات: لوحة مراقبة المبيعات وتقارير الأداء" class="mockup-mobile" style="display:block; width:200px; height:auto; max-width:200px; border:0; background-color:#ffffff;">
+                  <!-- Two images stacked: light variant default + dark variant swapped via prefers-color-scheme -->
+                  <td class="stack stack-img mockup-cell" valign="bottom" width="200" align="center" style="width:200px;">
+                    <img src="app_mockup-light.jpg" width="200" height="204" alt="لقطة من تطبيق أكاديميات: لوحة مراقبة المبيعات وتقارير الأداء" class="mockup-mobile mockup-light" style="display:block; width:200px; height:auto; max-width:200px; border:0;">
+                    <!--[if !mso]><!-- -->
+                    <img src="app_mockup-dark.jpg" width="200" height="204" alt="" class="mockup-mobile mockup-dark" style="display:none; width:200px; height:auto; max-width:200px; border:0;">
+                    <!--<![endif]-->
                   </td>
                 </tr>
               </table>
